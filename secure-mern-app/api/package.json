@@ -1,0 +1,19 @@
+{
+  "name": "secure-mern-app",
+  "version": "1.0.0",
+  "description": "Structured Backend API with Express for INSY7314 ICE Task 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
