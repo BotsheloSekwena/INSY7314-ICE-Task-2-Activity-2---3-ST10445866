@@ -1,4 +1,5 @@
 // Central error handling middleware
+
 const errorHandler = (err, req, res, next) => {
   // Log the error for debugging
   console.error(`[${new Date().toISOString()}] Error: ${err.message}`);

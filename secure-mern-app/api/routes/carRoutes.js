@@ -17,7 +17,6 @@ router.get('/', getAllCars);
 router.get('/:id', getCarById);
 
 // POST /api/cars - Add a new car (with validation)
-// CHANGE: Added validation middleware (was not present in Activity 1)
 router.post('/', validateCar, addCar);
 
 module.exports = router;

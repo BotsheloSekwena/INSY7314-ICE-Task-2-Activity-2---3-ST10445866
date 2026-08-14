@@ -12,18 +12,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// CHANGE: Controlled CORS configuration (was basic cors() in Activity 1)
+// Controlled CORS configuration
 app.use(cors());
 
-// CHANGE: Added express.json() middleware to parse request bodies (was missing)
+// Parse JSON request bodies
 app.use(express.json());
 
-// Root route (unchanged)
+// Root route
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Cars API' });
 });
 
-// Health check route (unchanged)
+// Health check route
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'OK',
@@ -31,10 +31,10 @@ app.get('/health', (req, res) => {
   });
 });
 
-// CHANGE: Moved API routes to separate route file
+// API routes
 app.use('/api/cars', carRoutes);
 
-// CHANGE: Added 404 handler for unmatched routes
+// 404 handler for unmatched routes
 app.use((req, res) => {
   res.status(404).json({
     status: 'error',
@@ -42,10 +42,10 @@ app.use((req, res) => {
   });
 });
 
-// CHANGE: Added central error handler (was not present in Activity 1)
+// Central error handler
 app.use(errorHandler);
 
-// Start server (unchanged)
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
